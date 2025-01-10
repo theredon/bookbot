@@ -1,1 +1,1 @@
-Bookbot is my first bootdev project
+Bookbot is my first project with bootdev
