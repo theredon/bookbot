@@ -3,7 +3,7 @@ def main():
     book_text: str = get_book_text(book_path)
     count: int = count_words(book_text)
     char_count: dict = count_characters(book_text)
-    sorted_char_count = dict_to_be_sorted(char_count)
+    sorted_char_count: list = dict_to_be_sorted(char_count)
     
     print(f"--- Begin report of {book_path} ---")
     print(f"{count} words found in the document")
@@ -20,12 +20,12 @@ def get_book_text(file: str):
 
 
 def count_words(text: str):
-    words = text.split()
+    words: list = text.split()
     return len(words)
 
 
 def count_characters(text: str):
-    characters = {}
+    characters: dict = {}
     for c in text:
         lowercase = c.lower()
         if lowercase in characters:
@@ -40,7 +40,7 @@ def sorted_on(dictionary: dict):
 
 
 def dict_to_be_sorted(characters: dict):
-    sorted_list = []
+    sorted_list: list = []
     for key in characters:
         sorted_list.append({"char": key, "num": characters[key]})
     sorted_list.sort(reverse=True, key=sorted_on)
